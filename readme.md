@@ -6,9 +6,9 @@ This command-line utility creates a snapshot of any KIP37 token in JSON or CSV f
 
 ### **CAUTION**
 
-when editing `snapshot.config.json`, delete the `./tx/{target symbol}` folder and take a snapshot again.
-csv output is not recommended. I look forward to your contributions to a better way of outputting.
-Not fully tested on Klaytn. Be careful to check the results before use.
+- when editing `snapshot.config.json`, delete the `./tx/{target symbol}` folder and take a snapshot again.
+- csv output is not recommended. I look forward to your contributions to a better way of outputting.
+- Not fully tested on Klaytn. Be careful to check the results before use.
 
 ### CLI Arguments
 
