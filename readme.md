@@ -1,18 +1,8 @@
-# Token Snapshot: Create ERC721 Token Snapshot
+# Token Snapshot: Create KIP37 Token Snapshot
 
-> Forked from [erc20-snapshot](https://github.com/binodnp/erc20-snapshot)
+> Forked from [erc721-snapshot](https://github.com/0xSlot/erc721-snapshot)
 
-This command-line utility creates a snapshot of any ERC721 token in JSON or CSV format. Use your own fully synced Ethereum node or any _Ethereum node as a service_ like Infura.
-
-- Works without a local Ethereum node.
-- Automatically resumes the next time upon failure.
-- Tested to work with Infura.
-
-## Getting Started
-
-```
-npm install erc721-snapshot -g
-```
+This command-line utility creates a snapshot of any KIP37 token in JSON or CSV format. Use your own fully synced Ethereum node or any Klaytn RPC
 
 ### CLI Arguments
 
@@ -37,7 +27,7 @@ To avoid getting prompted for each configuration parameters, each time `erc721-s
 
 ```json
 {
-  "provider": "https://mainnet.infura.io/v3/<key>",
+  "provider": "https://public-node-api.klaytnapi.com/v1/cypress",
   "contractAddress": "",
   "fromBlock": 0,
   "toBlock": "latest",
