@@ -10,8 +10,8 @@ const parameters = {
     {
       type: "input",
       name: "provider",
-      message: "Enter the URL of web3 provider",
-      default: "http://localhost:8545"
+      message: "Enter the URL of klaytn provider",
+      default: "https://public-node-api.klaytnapi.com/v1/cypress"
     },
     {
       type: "input",

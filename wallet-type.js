@@ -1,10 +1,10 @@
 const enumerable = require("linq");
-const Web3 = require("web3");
+const Caver = require("caver-js");
 const Config = require("./config").getConfig();
 const FileHelper = require("./file-helper");
 const Parameters = require("./parameters").get();
 
-const web3 = new Web3(new Web3.providers.HttpProvider((Config || {}).provider || "http://localhost:8545"));
+const caver = new Caver(new Caver.providers.HttpProvider((Config || {}).provider || "http://localhost:8545"));
 
 const findTypeFromCache = (cache, wallet) => {
   if (cache && cache.length) {
@@ -32,7 +32,7 @@ module.exports.addType = async balances => {
     if (!type) {
       type = "wallet";
 
-      const code = await web3.eth.getCode(balance.wallet);
+      const code = await caver.klay.getCode(balance.wallet);
 
       if (code != "0x") {
         type = "contract";

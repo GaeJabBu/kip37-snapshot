@@ -1,6 +1,6 @@
 "use strict";
 
-const Web3 = require("web3");
+const Caver = require("caver-js");
 
 const BlockByBlock = require("./block-by-block");
 const BlockReader = require("./block-reader");
@@ -14,7 +14,7 @@ const { promisify } = require("util");
 
 const sleep = promisify(setTimeout);
 
-const web3 = new Web3(new Web3.providers.HttpProvider((Config || {}).provider || "http://localhost:8545"));
+const caver = new Caver(new Caver.providers.HttpProvider((Config || {}).provider || "http://localhost:8545"));
 
 const groupBy = (objectArray, property) => {
   return objectArray.reduce((acc, obj) => {
@@ -56,7 +56,7 @@ const tryGetEvents = async (start, end, symbol) => {
 module.exports.get = async () => {
   const name = await Contract.methods.name().call();
   const symbol = await Contract.methods.symbol().call();
-  const blockHeight = await web3.eth.getBlockNumber();
+  const blockHeight = await caver.klay.getBlockNumber();
   var fromBlock = parseInt(Config.fromBlock) || 0;
   const blocksPerBatch = parseInt(Config.blocksPerBatch) || 0;
   const delay = parseInt(Config.delay) || 0;

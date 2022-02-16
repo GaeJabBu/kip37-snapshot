@@ -10,23 +10,23 @@
     "erc721-snapshot": "index.js"
   },
   "keywords": [
-    "ethereum",
-    "erc721",
+    "klaytn",
+    "kip37",
     "token",
     "snapshot"
   ],
-  "author": "0xSlot",
+  "author": "GaeJabBu",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/0xSlot/erc721-snapshot",
+  "homepage": "https://github.com/popdog-hodler/kip37-snapshot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/0xSlot/erc721-snapshot"
+    "url": "https://github.com/popdog-hodler/kip37-snapshot"
   },
   "dependencies": {
     "bignumber.js": "^9.0.1",
     "csv-writer": "^1.6.0",
     "inquirer": "^8.1.2",
     "linq": "^3.2.4",
-    "web3": "^1.5.2"
+    "caver-js": "^1.6.8"
   }
 }
