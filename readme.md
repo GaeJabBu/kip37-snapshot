@@ -2,7 +2,7 @@
 
 > Forked from [erc721-snapshot](https://github.com/0xSlot/erc721-snapshot)
 
-This command-line utility creates a snapshot of any KIP37 token in JSON or CSV format. Use your own fully synced Ethereum node or any Klaytn RPC
+This command-line utility creates a snapshot of any KIP37 token in JSON or CSV format. Use your own fully synced Klaytn node or any Klaytn RPC
 
 ### **CAUTION**
 
@@ -64,7 +64,7 @@ The block height to end the scan at.
 
 The number of blocks to query per batch.
 
-If you are using remote service like Infura, keep this number relative low (2000-5000) to avoid rate limits. If you are using a dedicated Ethereum node, you can increase this number to suit your needs.
+If you are using remote service like Infura, keep this number relative low (2000-5000) to avoid rate limits. If you are using a dedicated Klaytn node, you can increase this number to suit your needs.
 
 ### delay
 
@@ -72,7 +72,7 @@ The delay (in ms) between each request in the loop. Tweak this if you are experi
 
 ### checkIfContract
 
-Checks each address to determine whether it is a smart contract or an Ethereum wallet.
+Checks each address to determine whether it is a smart contract or an Klaytn wallet.
 *Not verified by Klaytn.
 
 ## You May Also Like
