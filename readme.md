@@ -4,6 +4,11 @@
 
 This command-line utility creates a snapshot of any KIP37 token in JSON or CSV format. Use your own fully synced Ethereum node or any Klaytn RPC
 
+### **CAUTION**
+
+- when editing `snapshot.config.json`, delete the `./tx/{target symbol}` folder and take a snapshot again.
+- Not fully tested on Klaytn. Be careful to check the results before use.
+
 ### CLI Arguments
 
 None. Prompts for user input and produces a configuration file on the first run.
@@ -19,11 +24,11 @@ cd path/to/a/directory
 Run the program:
 
 ```
-erc721-snapshot
+kip37-snapshot
 ```
 
 ## Configuration File / Prompt Parameters
-To avoid getting prompted for each configuration parameters, each time `erc721-snapshot` is ran, have a `./snapshot.config.json` file at the same location as `erc721-snapshot` is executed.
+To avoid getting prompted for each configuration parameters, each time `kip37-snapshot` is ran, have a `./snapshot.config.json` file at the same location as `kip37-snapshot` is executed.
 
 ```json
 {
@@ -33,18 +38,18 @@ To avoid getting prompted for each configuration parameters, each time `erc721-s
   "toBlock": "latest",
   "format": "json",
   "blocksPerBatch": 2500,
-  "delay": 0,
+  "delay": 500,
   "checkIfContract": true
 }
 ```
 
 ### provider
 
-Enter your fully synced Ethereum node. Could be a local node or remote services like Infura.
+Enter your fully synced Klaytn node. Could be a local node or remote RPC services
 
 ### contractAddress
 
-Address of your ERC721 contract.
+Address of your KIP-37 contract.
 
 ### fromBlock
 
@@ -67,6 +72,7 @@ The delay (in ms) between each request in the loop. Tweak this if you are experi
 ### checkIfContract
 
 Checks each address to determine whether it is a smart contract or an Ethereum wallet.
+*Not verified by Klaytn.
 
 ## You May Also Like
 

@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "bignumber.js": "^9.0.1",
+    "caver-js": "^1.6.8",
     "csv-writer": "^1.6.0",
     "inquirer": "^8.1.2",
-    "linq": "^3.2.4",
-    "caver-js": "^1.6.8"
+    "linq": "^3.2.4"
   }
 }
