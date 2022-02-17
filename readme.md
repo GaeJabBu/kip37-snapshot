@@ -25,7 +25,8 @@ cd path/to/a/directory
 Run the program:
 
 ```
-kip37-snapshot
+npm i
+npm start
 ```
 
 ## Configuration File / Prompt Parameters
