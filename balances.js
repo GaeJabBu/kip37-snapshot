@@ -46,11 +46,10 @@ module.exports.createBalances = async data => {
 
     const tokenIds = value.deposits.filter(x => !value.withdrawals.includes(x));
 
-    //console.log(tokenIds);
-
     closingBalances.push({
       wallet: key,
-      tokenIds
+      tokenIds,
+      amount : tokenIds.length
     });
   }
 
