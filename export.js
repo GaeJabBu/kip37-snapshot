@@ -12,18 +12,10 @@ module.exports.exportBalances = async (symbol, balances, format) => {
   const writeCsv = () => {
     const file = Parameters.outputFileNameCSV.replace(/{token}/g, symbol);
     FileHelper.ensureDirectory(path.dirname(file));
-
-    //CSV출력시에도 Token Id를 포함하는 경우
-    /*
+    
     const writer = objectToCsv({
       path: file,
       header: [{ id: "wallet", title: "Wallet" }, { id: "amount", title: "Amount" }, { id: "tokenIds", title: "TokenIds" }, { id: "type", title: "Type" }]
-    });
-    */
-
-    const writer = objectToCsv({
-      path: file,
-      header: [{ id: "wallet", title: "Wallet" }, { id: "amount", title: "Amount" }, { id: "type", title: "Type" }]
     });
 
     console.log("Exporting CSV");

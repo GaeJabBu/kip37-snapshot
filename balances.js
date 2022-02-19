@@ -16,6 +16,16 @@ module.exports.createBalances = async data => {
       throw new TypeError('invalid tokenId value');
     }
 
+    /*
+      //특정 토큰 ID 범위를 제외하는 경우.
+
+      if (parseInt(event.tokenId) < 2000) {
+        console.log("제외:"+ event.tokenId)
+      }else{
+        deposits = [...deposits, event.tokenId];
+        balances.set(wallet, { deposits, withdrawals });
+      }
+    */
     deposits = [...deposits, event.tokenId];
     balances.set(wallet, { deposits, withdrawals });
   };
