@@ -54,7 +54,35 @@ module.exports.createBalances = async data => {
       continue;
     }
 
-    const tokenIds = value.deposits.filter(x => !value.withdrawals.includes(x));
+    let scores;
+    
+    scores = value.deposits.reduce(
+      function (carrier, elem) {
+        if(carrier[elem]?.deposits == null) {
+          carrier[elem] = { deposits: 0, withdrawals: 0 }
+        }
+        carrier[elem].deposits += 1;
+        return carrier;
+      },
+      {}
+    )
+
+    scores = value.withdrawals.reduce(
+      function (carrier, elem) {
+        carrier[elem].withdrawals += 1;
+        return carrier;
+      },
+      scores
+    )
+
+    const tokenIds = Object.keys(scores).reduce(
+      function(carrier, elem) {
+        if(scores[elem].deposits > scores[elem].withdrawals) {
+          carrier.push(elem);
+        }
+        return carrier;
+      }, []
+    )
 
     closingBalances.push({
       wallet: key,
